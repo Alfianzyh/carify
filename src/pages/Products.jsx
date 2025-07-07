@@ -134,7 +134,7 @@ function Products() {
 
   return (
     <section className="p-8 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6">Cari Mobil Impianmu</h2>
+      <h2 className="text-3xl font-bold mb-6">Daftar Mobil Ready to Rent</h2>
       <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4">
         {filteredCars.length > 0 ? (
