@@ -9,7 +9,7 @@ const carList = [
     model: 'Avanza',
     year: 2020,
     price: 350000,
-    image: 'public/Avanza.jpg',
+    image: '/Avanza.jpg',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const carList = [
     model: 'Xpander',
     year: 2022,
     price: 430000,
-    image: 'public/Xpander.jpg',
+    image: '/Xpander.jpg',
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const carList = [
     model: 'Fortuner',
     year: 2020,
     price: 750000,
-    image: 'public/Fortuner.jpg',
+    image: '/Fortuner.jpg',
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const carList = [
     model: 'CRV',
     year: 2018,
     price: 670000,
-    image: 'public/CRV.jpg',
+    image: '/CRV.jpg',
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const carList = [
     model: 'CX-5',
     year: 2021,
     price: 700000,
-    image: 'public/CX5.jpg',
+    image: '/CX5.jpg',
   },
   {
     id: 6,
@@ -49,7 +49,7 @@ const carList = [
     model: 'Palisade',
     year: 2023,
     price: 850000,
-    image: 'public/Palisade.jpg',
+    image: '/Palisade.jpg',
   },
   {
     id: 7,
@@ -57,7 +57,7 @@ const carList = [
     model: 'X1',
     year: 2019,
     price: 950000,
-    image: 'public/X1.jpg',
+    image: '/X1.jpg',
   },
   {
     id: 8,
@@ -65,7 +65,7 @@ const carList = [
     model: 'GLA 200',
     year: 2020,
     price: 1050000,
-    image: 'public/Gla.jpg',
+    image: '/Gla.jpg',
   },
   {
     id: 9,
@@ -73,7 +73,7 @@ const carList = [
     model: 'Model 3',
     year: 2023,
     price: 1500000,
-    image: 'public/Tesla.jpg',
+    image: '/Tesla.jpg',
   },
 ];
 
