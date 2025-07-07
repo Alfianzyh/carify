@@ -1,7 +1,6 @@
 import React from "react";
-import Header from './components/Header';
-import Footer from './components/Footer';
-
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 const HomePage = () => {
   return (
     <div className="w-full bg-white text-gray-900 font-montserrat overflow-x-hidden">
