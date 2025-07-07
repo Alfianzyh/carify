@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  FaCar,
+  FaUserTie,
+  FaPlaneArrival,
+  FaGlobeAsia,
+  FaCalendarCheck,
+  FaBuilding,
+} from "react-icons/fa";
 
 const HomePage = () => {
   return (
@@ -9,83 +17,63 @@ const HomePage = () => {
         <div className="max-w-screen-2xl w-full mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="md:w-1/2 space-y-6">
             <h2 className="text-5xl font-bold leading-tight">
-              Find Your Perfect Car Today
+              Temukan Mobil Sewa Terbaikmu Hari Ini
             </h2>
             <p className="text-blue-100 text-lg">
-              Discover thousands of quality vehicles from trusted dealers. Get
-              the best deals on new and used cars.
+              Pilihan mobil berkualitas dengan harga terjangkau. Sewa harian, mingguan, hingga bulanan, semua bisa!
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold">
-                Browse Inventory
+              {/* Tombol 1 */}
+              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">
+                Mulai Cari Mobil
               </button>
-              <button className="border-2 border-white px-6 py-3 rounded-lg font-semibold">
-                Schedule Test Drive
+
+              {/* Tombol 2 */}
+              <button className="relative overflow-hidden border-2 border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 group hover:bg-white hover:text-blue-700">
+                <span className="relative z-10">Jadwalkan Penjemputan</span>
+                <span className="absolute inset-0 bg-white opacity-10 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-lg" />
               </button>
             </div>
           </div>
           <div className="md:w-1/2">
             <img
               src="https://placehold.co/640x360"
-              alt="Car Showcase"
+              alt="Mobil Rental"
               className="rounded-lg shadow-xl w-full"
             />
           </div>
         </div>
       </section>
 
-      {/* Search Section */}
-      <section className="w-full bg-white py-20">
-        <div className="max-w-screen-2xl mx-auto px-6 text-center space-y-4">
-          <h3 className="text-4xl font-bold">Find Your Dream Car</h3>
-          <p className="text-gray-600">Search through our extensive inventory</p>
 
-          <div className="mt-10 bg-gray-50 p-6 rounded-xl shadow-sm grid md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {["Make", "Model", "Year", "Price Range"].map((label, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-lg border border-gray-300 px-4 py-3 text-left"
-              >
-                <span className="text-base">{label}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold">
-              Search Vehicles
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Featured Vehicles */}
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-screen-2xl mx-auto px-6 text-center">
-          <h3 className="text-4xl font-bold mb-2">Featured Vehicles</h3>
+          <h3 className="text-4xl font-bold mb-2">Mobil Paling Banyak Disewa</h3>
           <p className="text-gray-600 mb-10">
-            Handpicked cars from our premium collection
+            Pilihan mobil terpopuler yang sering digunakan pelanggan kami
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "2024 BMW M3",
+                name: "BMW M3 2024",
                 desc: "3.0L Twin Turbo • 473 HP • AWD",
-                price: "$72,500",
-                tag: "New",
+                price: "Rp 1.150.000 / hari",
+                tag: "Baru",
               },
               {
-                name: "2023 Honda CR-V",
+                name: "Honda CR-V 2023",
                 desc: "1.5L Turbo • 190 HP • AWD",
-                price: "$28,900",
-                tag: "Used",
+                price: "Rp 850.000 / hari",
+                tag: "Bekas",
               },
               {
-                name: "2024 Ford F-150",
+                name: "Ford F-150 2024",
                 desc: "3.5L V6 • 400 HP • 4WD",
-                price: "$45,200",
-                tag: "New",
+                price: "Rp 980.000 / hari",
+                tag: "Baru",
               },
             ].map((car, i) => (
               <div
@@ -102,7 +90,7 @@ const HomePage = () => {
                     <h4 className="text-xl font-semibold">{car.name}</h4>
                     <span
                       className={`text-sm px-3 py-1 rounded-full ${
-                        car.tag === "New"
+                        car.tag === "Baru"
                           ? "bg-green-100 text-green-800"
                           : "bg-blue-100 text-blue-800"
                       }`}
@@ -115,8 +103,8 @@ const HomePage = () => {
                     <span className="text-2xl text-blue-600 font-bold">
                       {car.price}
                     </span>
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
-                      View Details
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                      Lihat Detail
                     </button>
                   </div>
                 </div>
@@ -126,31 +114,52 @@ const HomePage = () => {
         </div>
       </section>
 
+
       {/* Services Section */}
       <section className="w-full bg-white py-20">
         <div className="max-w-screen-2xl mx-auto px-6 text-center">
-          <h3 className="text-4xl font-bold mb-2">Our Services</h3>
+          <h3 className="text-4xl font-bold mb-2">Layanan Kami</h3>
           <p className="text-gray-600 mb-10">
-            Complete automotive solutions for all your needs
+            Solusi rental mobil lengkap, nyaman, dan terpercaya
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Vehicle Sales",
-                desc: "Wide selection of new and used vehicles from top brands",
+                title: "Daily & Weekly Car Rental",
+                desc: "Penyewaan mobil fleksibel untuk kebutuhan harian atau mingguan.",
+                icon: <FaCar className="text-blue-600 text-3xl mx-auto" />,
               },
               {
-                title: "Service & Repair",
-                desc: "Expert maintenance and repair services by certified technicians",
+                title: "Professional Driver",
+                desc: "Layanan supir profesional dan ramah untuk perjalanan Anda.",
+                icon: <FaUserTie className="text-blue-600 text-3xl mx-auto" />,
               },
               {
-                title: "Financing",
-                desc: "Flexible financing options with competitive rates",
+                title: "Airport Pickup & Drop",
+                desc: "Layanan antar-jemput bandara dengan kenyamanan maksimal.",
+                icon: <FaPlaneArrival className="text-blue-600 text-3xl mx-auto" />,
+              },
+              {
+                title: "Online Booking",
+                desc: "Pemesanan mobil mudah secara online dari mana saja.",
+                icon: <FaCalendarCheck className="text-blue-600 text-3xl mx-auto" />,
+              },
+              {
+                title: "Tour Packages",
+                desc: "Nikmati paket wisata bersama keluarga atau rombongan.",
+                icon: <FaGlobeAsia className="text-blue-600 text-3xl mx-auto" />,
+              },
+              {
+                title: "Corporate Rental",
+                desc: "Solusi sewa mobil untuk kebutuhan perusahaan dan bisnis.",
+                icon: <FaBuilding className="text-blue-600 text-3xl mx-auto" />,
               },
             ].map((service, i) => (
               <div key={i} className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto bg-blue-100 rounded-full" />
+                <div className="w-16 h-16 mx-auto flex items-center justify-center bg-blue-100 rounded-full">
+                  {service.icon}
+                </div>
                 <h4 className="text-xl font-semibold">{service.title}</h4>
                 <p className="text-gray-600">{service.desc}</p>
               </div>
@@ -162,16 +171,16 @@ const HomePage = () => {
       {/* CTA Section */}
       <section className="w-full bg-blue-600 text-white py-20">
         <div className="max-w-screen-2xl mx-auto px-6 text-center space-y-6">
-          <h3 className="text-4xl font-bold">Ready to Find Your Next Car?</h3>
+          <h3 className="text-4xl font-bold">Siap Menyewa Mobil Impian Anda?</h3>
           <p className="text-blue-100 text-lg">
-            Browse our inventory or schedule a test drive today
+            Jelajahi pilihan mobil kami atau hubungi tim kami untuk informasi lebih lanjut
           </p>
           <div className="flex justify-center flex-wrap gap-4">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold">
-              Browse Inventory
+            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">
+              Lihat Daftar Mobil
             </button>
-            <button className="border-2 border-white px-6 py-3 rounded-lg font-semibold">
-              Contact Us
+            <button className="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+              Hubungi Kami
             </button>
           </div>
         </div>
