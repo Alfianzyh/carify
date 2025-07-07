@@ -41,7 +41,7 @@ const HomePage = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              src="./src/assets/Fortuner.jpg"
+              src="public/Fortuner.jpg"
               alt="Mobil Rental"
               className="rounded-lg shadow-xl w-full"
             />
@@ -65,7 +65,7 @@ const HomePage = () => {
               model: 'Avanza',
               year: 2023,
               price: 350000,
-              image: './src/assets/Avanza.jpg',
+              image: 'public/Avanza.jpg',
             },
             {
               id: 102,
@@ -73,7 +73,7 @@ const HomePage = () => {
               model: 'CR-V',
               year: 2023,
               price: 670000,
-              image: './src/assets/CRV.jpg',
+              image: 'public/CRV.jpg',
             },
             {
               id: 103,
@@ -81,7 +81,7 @@ const HomePage = () => {
               model: 'Fortuner',
               year: 2024,
               price: 750000,
-              image: './src/assets/Fortuner.jpg',
+              image: 'public/Fortuner.jpg',
             },
           ].map((car) => (
             <CarCard key={car.id} car={car} />
