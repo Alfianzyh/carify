@@ -8,7 +8,7 @@ const carList = [
     make: 'Toyota',
     model: 'Avanza',
     year: 2020,
-    price: 180000000,
+    price: 350000,
     image: 'https://source.unsplash.com/400x300/?toyota,avanza',
   },
   {
@@ -16,7 +16,7 @@ const carList = [
     make: 'Honda',
     model: 'Jazz',
     year: 2019,
-    price: 190000000,
+    price: 400000,
     image: 'https://source.unsplash.com/400x300/?honda,jazz',
   },
   {
@@ -24,7 +24,7 @@ const carList = [
     make: 'Suzuki',
     model: 'Ertiga',
     year: 2021,
-    price: 200000000,
+    price: 370000,
     image: 'https://source.unsplash.com/400x300/?suzuki,ertiga',
   },
   {
@@ -32,7 +32,7 @@ const carList = [
     make: 'Daihatsu',
     model: 'Xenia',
     year: 2022,
-    price: 175000000,
+    price: 340000,
     image: 'https://source.unsplash.com/400x300/?daihatsu,xenia',
   },
   {
@@ -40,7 +40,7 @@ const carList = [
     make: 'Mitsubishi',
     model: 'Xpander',
     year: 2022,
-    price: 230000000,
+    price: 430000,
     image: 'https://source.unsplash.com/400x300/?mitsubishi,xpander',
   },
   {
@@ -48,7 +48,7 @@ const carList = [
     make: 'Nissan',
     model: 'Livina',
     year: 2021,
-    price: 210000000,
+    price: 390000,
     image: 'https://source.unsplash.com/400x300/?nissan,livina',
   },
   {
@@ -56,7 +56,7 @@ const carList = [
     make: 'Wuling',
     model: 'Almaz',
     year: 2023,
-    price: 270000000,
+    price: 500000,
     image: 'https://source.unsplash.com/400x300/?wuling,almaz',
   },
   {
@@ -64,7 +64,7 @@ const carList = [
     make: 'Toyota',
     model: 'Fortuner',
     year: 2020,
-    price: 450000000,
+    price: 750000,
     image: 'https://source.unsplash.com/400x300/?toyota,fortuner',
   },
   {
@@ -72,7 +72,7 @@ const carList = [
     make: 'Honda',
     model: 'CRV',
     year: 2018,
-    price: 380000000,
+    price: 670000,
     image: 'https://source.unsplash.com/400x300/?honda,crv',
   },
   {
@@ -80,7 +80,7 @@ const carList = [
     make: 'Mazda',
     model: 'CX-5',
     year: 2021,
-    price: 470000000,
+    price: 700000,
     image: 'https://source.unsplash.com/400x300/?mazda,cx5',
   },
   {
@@ -88,7 +88,7 @@ const carList = [
     make: 'Hyundai',
     model: 'Palisade',
     year: 2023,
-    price: 620000000,
+    price: 850000,
     image: 'https://source.unsplash.com/400x300/?hyundai,palisade',
   },
   {
@@ -96,7 +96,7 @@ const carList = [
     make: 'Kia',
     model: 'Seltos',
     year: 2022,
-    price: 350000000,
+    price: 600000,
     image: 'https://source.unsplash.com/400x300/?kia,seltos',
   },
   {
@@ -104,7 +104,7 @@ const carList = [
     make: 'BMW',
     model: 'X1',
     year: 2019,
-    price: 650000000,
+    price: 950000,
     image: 'https://source.unsplash.com/400x300/?bmw,x1',
   },
   {
@@ -112,7 +112,7 @@ const carList = [
     make: 'Mercedes-Benz',
     model: 'GLA 200',
     year: 2020,
-    price: 720000000,
+    price: 1050000,
     image: 'https://source.unsplash.com/400x300/?mercedes,gla',
   },
   {
@@ -120,7 +120,7 @@ const carList = [
     make: 'Tesla',
     model: 'Model 3',
     year: 2023,
-    price: 950000000,
+    price: 1500000,
     image: 'https://source.unsplash.com/400x300/?tesla,model3',
   },
 ];
@@ -134,13 +134,22 @@ function Products() {
 
   return (
     <section className="p-8 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6">Daftar Mobil Ready to Rent</h2>
-      <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">Mobil Siap Disewa</h2>
+        <p className="text-gray-600">
+          Temukan mobil pilihan yang sesuai dengan kebutuhan perjalanan Anda. Semua unit dalam kondisi terbaik dan siap jalan!
+        </p>
+      </div>
+
+      <div className="mb-6 max-w-md mx-auto">
+        <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Cari merek atau model..." />
+      </div>
+
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {filteredCars.length > 0 ? (
           filteredCars.map((car) => <CarCard key={car.id} car={car} />)
         ) : (
-          <p className="text-gray-500 col-span-full">Tidak ada mobil ditemukan.</p>
+          <p className="text-gray-500 col-span-full text-center">Mobil tidak ditemukan. Coba kata kunci lain.</p>
         )}
       </div>
     </section>
