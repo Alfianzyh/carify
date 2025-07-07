@@ -1,4 +1,6 @@
 import React from "react";
+import CarCard from '../components/CarCard';
+import { Link } from 'react-router-dom';
 import {
   FaCar,
   FaUserTie,
@@ -23,12 +25,14 @@ const HomePage = () => {
               Pilihan mobil berkualitas dengan harga terjangkau. Sewa harian, mingguan, hingga bulanan, semua bisa!
             </p>
             <div className="flex flex-wrap gap-4">
-              {/* Tombol 1 */}
-              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">
-                Mulai Cari Mobil
-              </button>
+              {/* Tombol 1: Ke halaman Products */}
+              <Link to="/products">
+                <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">
+                  Mulai Cari Mobil
+                </button>
+              </Link>
 
-              {/* Tombol 2 */}
+              {/* Tombol 2: Tetap statis (jika nanti mau diarahkan ke fitur jadwal bisa diganti) */}
               <button className="relative overflow-hidden border-2 border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 group hover:bg-white hover:text-blue-700">
                 <span className="relative z-10">Jadwalkan Penjemputan</span>
                 <span className="absolute inset-0 bg-white opacity-10 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-lg" />
@@ -45,74 +49,46 @@ const HomePage = () => {
         </div>
       </section>
 
-
-
       {/* Featured Vehicles */}
-      <section className="w-full bg-gray-50 py-20">
-        <div className="max-w-screen-2xl mx-auto px-6 text-center">
-          <h3 className="text-4xl font-bold mb-2">Mobil Paling Banyak Disewa</h3>
-          <p className="text-gray-600 mb-10">
-            Pilihan mobil terpopuler yang sering digunakan pelanggan kami
-          </p>
+     <section className="w-full bg-gray-50 py-20">
+      <div className="max-w-screen-2xl mx-auto px-6 text-center">
+        <h3 className="text-4xl font-bold mb-2">Mobil Paling Banyak Disewa</h3>
+        <p className="text-gray-600 mb-10">
+          Pilihan mobil terpopuler yang sering digunakan pelanggan kami
+        </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "BMW M3 2024",
-                desc: "3.0L Twin Turbo • 473 HP • AWD",
-                price: "Rp 1.150.000 / hari",
-                tag: "Baru",
-              },
-              {
-                name: "Honda CR-V 2023",
-                desc: "1.5L Turbo • 190 HP • AWD",
-                price: "Rp 850.000 / hari",
-                tag: "Bekas",
-              },
-              {
-                name: "Ford F-150 2024",
-                desc: "3.5L V6 • 400 HP • 4WD",
-                price: "Rp 980.000 / hari",
-                tag: "Baru",
-              },
-            ].map((car, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl overflow-hidden shadow-lg"
-              >
-                <img
-                  src="https://placehold.co/384x192"
-                  alt={car.name}
-                  className="w-full"
-                />
-                <div className="p-5 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-xl font-semibold">{car.name}</h4>
-                    <span
-                      className={`text-sm px-3 py-1 rounded-full ${
-                        car.tag === "Baru"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-blue-100 text-blue-800"
-                      }`}
-                    >
-                      {car.tag}
-                    </span>
-                  </div>
-                  <p className="text-gray-600">{car.desc}</p>
-                  <div className="flex items-center justify-between mt-3">
-                    <span className="text-2xl text-blue-600 font-bold">
-                      {car.price}
-                    </span>
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-                      Lihat Detail
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-3 gap-6 text-left">
+          {[
+            {
+              id: 101,
+              make: 'Toyota',
+              model: 'Avanza',
+              year: 2023,
+              price: 350000,
+              image: 'https://source.unsplash.com/400x300/?toyota,avanza',
+            },
+            {
+              id: 102,
+              make: 'Honda',
+              model: 'CR-V',
+              year: 2023,
+              price: 670000,
+              image: 'https://source.unsplash.com/400x300/?honda,crv',
+            },
+            {
+              id: 103,
+              make: 'Toyota',
+              model: 'Fortuner',
+              year: 2024,
+              price: 750000,
+              image: 'https://source.unsplash.com/400x300/?ford,f150',
+            },
+          ].map((car) => (
+            <CarCard key={car.id} car={car} />
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
 
       {/* Services Section */}
@@ -176,12 +152,16 @@ const HomePage = () => {
             Jelajahi pilihan mobil kami atau hubungi tim kami untuk informasi lebih lanjut
           </p>
           <div className="flex justify-center flex-wrap gap-4">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">
-              Lihat Daftar Mobil
-            </button>
-            <button className="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
-              Hubungi Kami
-            </button>
+            <Link to="/products">
+              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">
+                Lihat Daftar Mobil
+              </button>
+            </Link>
+            <Link to="/about">
+              <button className="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+                Hubungi Kami
+              </button>
+            </Link>
           </div>
         </div>
       </section>
