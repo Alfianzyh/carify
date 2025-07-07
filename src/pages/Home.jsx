@@ -41,7 +41,7 @@ const HomePage = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              src="https://placehold.co/640x360"
+              src="./src/assets/Fortuner.jpg"
               alt="Mobil Rental"
               className="rounded-lg shadow-xl w-full"
             />
@@ -65,7 +65,7 @@ const HomePage = () => {
               model: 'Avanza',
               year: 2023,
               price: 350000,
-              image: 'https://source.unsplash.com/400x300/?toyota,avanza',
+              image: './src/assets/Avanza.jpg',
             },
             {
               id: 102,
@@ -73,7 +73,7 @@ const HomePage = () => {
               model: 'CR-V',
               year: 2023,
               price: 670000,
-              image: 'https://source.unsplash.com/400x300/?honda,crv',
+              image: './src/assets/CRV.jpg',
             },
             {
               id: 103,
@@ -81,7 +81,7 @@ const HomePage = () => {
               model: 'Fortuner',
               year: 2024,
               price: 750000,
-              image: 'https://source.unsplash.com/400x300/?ford,f150',
+              image: './src/assets/Fortuner.jpg',
             },
           ].map((car) => (
             <CarCard key={car.id} car={car} />
