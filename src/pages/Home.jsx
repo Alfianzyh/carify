@@ -1,14 +1,11 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 const HomePage = () => {
   return (
     <div className="w-full bg-white text-gray-900 font-montserrat overflow-x-hidden">
-      {/* Header */}
-      <Header />
 
       {/* Hero Section */}
-      <section className="w-full min-h-screen bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center">
+      <section className="w-full min-h-screen mt-0 bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center">
         <div className="max-w-screen-2xl w-full mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="md:w-1/2 space-y-6">
             <h2 className="text-5xl font-bold leading-tight">
@@ -179,9 +176,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
