@@ -1,6 +1,16 @@
-// src/api/cars.js
-export const dummyCars = [
-  { id: 1, make: 'Toyota', model: 'Avanza', year: 2020, price: 150000000 },
-  { id: 2, make: 'Honda', model: 'Jazz', year: 2019, price: 175000000 },
-  { id: 3, make: 'Suzuki', model: 'Ertiga', year: 2021, price: 160000000 },
-];
+import axios from 'axios';
+
+const API_KEY = 'h8/w6mNrb6Qcn1MPBDOqbw==duoPWkzmely15zIl'; 
+
+export async function fetchCars({ make = '', model = '', year = '' } = {}) {
+  const params = {};
+  if (make) params.make = make;
+  if (model) params.model = model;
+  if (year) params.year = year;
+
+  const res = await axios.get('https://api.api-ninjas.com/v1/cars', {
+    headers: { 'X-Api-Key': API_KEY },
+    params,
+  });
+  return res.data; // array mobil
+}
