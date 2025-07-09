@@ -1,4 +1,4 @@
-# Carify - Car Rental Web Application
+# Carify - Car Rental Landing Page
 
 **Carify** is a modern web application for car rental services. Built using **React JS** and **Tailwind CSS**, Carify delivers a responsive, clean, and user-friendly interface for users who want to rent cars quickly and easily.
 
