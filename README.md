@@ -69,6 +69,6 @@ The app will run at `http://localhost:5173`
 
 ## 📄 License
 
-This project is intended for educational and personal development purposes only.
+This project is intended for educational and personal development purposes only. Not intended for commercial use without permission.
 
 ---
