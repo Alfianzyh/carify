@@ -53,7 +53,6 @@ Aplikasi akan berjalan di http://localhost:5173
 - Tailwind CSS
 - Vite (sebagai build tool)
 
-
 📄 Lisensi
 Proyek ini hanya untuk tujuan edukasi dan pengembangan pribadi.
 
