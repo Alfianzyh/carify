@@ -1,60 +1,74 @@
-# Carify - Aplikasi Rental Mobil
+# Carify - Car Rental Web Application
 
-**Carify** adalah aplikasi web modern untuk layanan penyewaan mobil. Dibangun menggunakan **React JS** dan **Tailwind CSS**, Carify menghadirkan tampilan yang responsif, bersih, dan mudah digunakan bagi pengguna yang ingin menyewa mobil dengan cepat dan praktis.
+**Carify** is a modern web application for car rental services. Built using **React JS** and **Tailwind CSS**, Carify delivers a responsive, clean, and user-friendly interface for users who want to rent cars quickly and easily.
 
 🔗 Live Demo: [https://carify-gamma.vercel.app](https://carify-gamma.vercel.app)
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi
+## 🚀 How to Run the Application
 
-### 1. Clone repositori
+### 1. Clone the repository
+
 ```bash
 git clone https://github.com/username/carify.git
 cd carify
 ```
 
 ### 2. Install dependencies
+
 ```bash
 npm install
 ```
 
-### 3. Jalankan server development
+### 3. Start the development server
+
 ```bash
 npm run dev
 ```
 
-Aplikasi akan berjalan di http://localhost:5173
+The app will run at `http://localhost:5173`
 
-# ✨ Fitur Utama
-
-🔍 Home Page
-* Hero section dengan CTA (Call to Action) yang mengarahkan ke daftar mobil
-* Daftar mobil paling sering disewa
-* Informasi layanan rental yang ditawarkan
-* Section ajakan untuk menyewa mobil
-
-🚗 Products Page
-* Menampilkan daftar mobil yang tersedia untuk disewa
-* Fitur pencarian mobil berdasarkan merek atau model
-* Gambar, harga sewa per hari, dan tahun kendaraan ditampilkan secara informatif
-
-ℹ️ About Page
-* Penjelasan singkat mengenai layanan Carify
-* Formulir Contact Us dan informasi kontak WhatsApp/email
-
-🌐 Responsif
-* Desain responsif untuk perangkat mobile, tablet, dan desktop
-* Menggunakan Tailwind CSS untuk styling yang bersih dan konsisten
 ---
 
-🛠️ Teknologi
+## ✨ Main Features
+
+🔍 **Home Page**
+
+* Hero section with a Call to Action (CTA) that directs users to the car listings
+* Most frequently rented cars
+* Information about rental services offered
+* Persuasive section encouraging users to rent a car
+
+🚗 **Products Page**
+
+* Displays a list of available cars for rent
+* Search feature to find cars by brand or model
+* Informative display of car image, rental price per day, and model year
+
+ℹ️ **About Page**
+
+* Brief explanation of the Carify service
+* Contact Us form and contact info via WhatsApp/email
+
+🌐 **Responsive Design**
+
+* Optimized for mobile, tablet, and desktop devices
+* Uses Tailwind CSS for clean and consistent styling
+
+---
+
+## 🛠️ Technologies Used
+
 * React JS
 * React Router DOM
 * Tailwind CSS
-* Vite (sebagai build tool)
+* Vite (as the build tool)
+
 ---
 
-📄 Lisensi
-Proyek ini hanya untuk tujuan edukasi dan pengembangan pribadi.
+## 📄 License
+
+This project is intended for educational and personal development purposes only.
+
 ---
