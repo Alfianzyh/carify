@@ -1,12 +1,58 @@
-# React + Vite
+# Carify - Aplikasi Rental Mobil
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Carify** adalah aplikasi web modern untuk layanan penyewaan mobil. Dibangun menggunakan **React JS** dan **Tailwind CSS**, Carify menghadirkan tampilan yang responsif, bersih, dan mudah digunakan bagi pengguna yang ingin menyewa mobil dengan cepat dan praktis.
 
-Currently, two official plugins are available:
+🔗 Live Demo: [https://carify-gamma.vercel.app](https://carify-gamma.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Cara Menjalankan Aplikasi
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Clone repositori
+```bash
+git clone https://github.com/username/carify.git
+cd carify
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Jalankan server development
+```bash
+npm run dev
+```
+
+Aplikasi akan berjalan di http://localhost:5173
+
+Fitur Utama
+🔍 Home Page
+- Hero section dengan CTA (Call to Action) yang mengarahkan ke daftar mobil
+- Daftar mobil paling sering disewa
+- Informasi layanan rental yang ditawarkan
+- Section ajakan untuk menyewa mobil
+
+🚗 Products Page
+- Menampilkan daftar mobil yang tersedia untuk disewa
+- Fitur pencarian mobil berdasarkan merek atau model
+- Gambar, harga sewa per hari, dan tahun kendaraan ditampilkan secara informatif
+
+ℹ️ About Page
+- Penjelasan singkat mengenai layanan Carify
+- Formulir Contact Us dan informasi kontak WhatsApp/email
+
+🌐 Responsif
+- Desain responsif untuk perangkat mobile, tablet, dan desktop
+- Menggunakan Tailwind CSS untuk styling yang bersih dan konsisten
+
+🛠️ Teknologi
+- React JS
+- React Router DOM
+- Tailwind CSS
+- Vite (sebagai build tool)
+
+📄 Lisensi
+Proyek ini hanya untuk tujuan edukasi dan pengembangan pribadi.
+
+
