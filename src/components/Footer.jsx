@@ -23,7 +23,7 @@ const Footer = () => {
             <ul className="space-y-1">
               <li>+62 123-4567-8910</li>
               <li>info@carify.com</li>
-              <li>Jl. Diponegoro, Surabaya, Indonesia</li>
+              <li>Jl. In Saja, Indonesia</li>
             </ul>
           </div>
           <div>
