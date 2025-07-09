@@ -26,7 +26,8 @@ npm run dev
 
 Aplikasi akan berjalan di http://localhost:5173
 
-Fitur Utama
+# Fitur Utama
+
 🔍 Home Page
 - Hero section dengan CTA (Call to Action) yang mengarahkan ke daftar mobil
 - Daftar mobil paling sering disewa
