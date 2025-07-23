@@ -9,15 +9,68 @@ import {
   FaCalendarCheck,
   FaBuilding,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const HomePage = () => {
+  const services = [
+    {
+      title: "Daily & Weekly Car Rental",
+      desc: "Penyewaan mobil fleksibel untuk kebutuhan harian atau mingguan.",
+      icon: <FaCar className="text-blue-600 text-3xl mx-auto" />,
+    },
+    {
+      title: "Professional Driver",
+      desc: "Layanan supir profesional dan ramah untuk perjalanan Anda.",
+      icon: <FaUserTie className="text-blue-600 text-3xl mx-auto" />,
+    },
+    {
+      title: "Airport Pickup & Drop",
+      desc: "Layanan antar-jemput bandara dengan kenyamanan maksimal.",
+      icon: <FaPlaneArrival className="text-blue-600 text-3xl mx-auto" />,
+    },
+    {
+      title: "Online Booking",
+      desc: "Pemesanan mobil mudah secara online dari mana saja.",
+      icon: <FaCalendarCheck className="text-blue-600 text-3xl mx-auto" />,
+    },
+    {
+      title: "Tour Packages",
+      desc: "Nikmati paket wisata bersama keluarga atau rombongan.",
+      icon: <FaGlobeAsia className="text-blue-600 text-3xl mx-auto" />,
+    },
+    {
+      title: "Corporate Rental",
+      desc: "Solusi sewa mobil untuk kebutuhan perusahaan dan bisnis.",
+      icon: <FaBuilding className="text-blue-600 text-3xl mx-auto" />,
+    },
+  ];
+
   return (
     <div className="w-full bg-white text-gray-900 font-montserrat overflow-x-hidden">
-
       {/* Hero Section */}
       <section className="w-full min-h-screen mt-0 bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center">
         <div className="max-w-screen-2xl w-full mx-auto px-6 py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
-          <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
+          <motion.div
+            className="w-full md:w-1/2 space-y-6 text-center md:text-left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0}
+          >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
               Temukan Mobil Sewa Terbaikmu Hari Ini
             </h2>
@@ -35,26 +88,54 @@ const HomePage = () => {
                 <span className="absolute inset-0 bg-white opacity-10 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-lg" />
               </button>
             </div>
-          </div>
-          <div className="w-full md:w-1/2">
+          </motion.div>
+
+          <motion.div
+            className="w-full md:w-1/2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <img
               src="/Fortuner.jpg"
               alt="Mobil Rental"
               className="rounded-lg shadow-xl w-full"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Vehicles */}
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-screen-2xl mx-auto px-6 text-center">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-2">Mobil Paling Banyak Disewa</h3>
-          <p className="text-gray-600 mb-10 text-sm sm:text-base">
+          <motion.h3
+            className="text-3xl sm:text-4xl font-bold mb-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0}
+          >
+            Mobil Paling Banyak Disewa
+          </motion.h3>
+          <motion.p
+            className="text-gray-600 mb-10 text-sm sm:text-base"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0.1}
+          >
             Pilihan mobil terpopuler yang sering digunakan pelanggan kami
-          </p>
+          </motion.p>
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-left">
+          <motion.div
+            className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {[
               {
                 id: 101,
@@ -80,61 +161,56 @@ const HomePage = () => {
                 price: 750000,
                 image: '/Fortuner.jpg',
               },
-            ].map((car) => (
-              <CarCard key={car.id} car={car} />
+            ].map((car, i) => (
+              <motion.div key={car.id} variants={fadeUp} custom={i}>
+                <CarCard car={car} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="w-full bg-white py-20">
         <div className="max-w-screen-2xl mx-auto px-6 text-center">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-2">Layanan Kami</h3>
-          <p className="text-gray-600 mb-10 text-sm sm:text-base">
+          <motion.h3
+            className="text-3xl sm:text-4xl font-bold mb-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0}
+          >
+            Layanan Kami
+          </motion.h3>
+          <motion.p
+            className="text-gray-600 mb-10 text-sm sm:text-base"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0.1}
+          >
             Solusi rental mobil lengkap, nyaman, dan terpercaya
-          </p>
+          </motion.p>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Daily & Weekly Car Rental",
-                desc: "Penyewaan mobil fleksibel untuk kebutuhan harian atau mingguan.",
-                icon: <FaCar className="text-blue-600 text-3xl mx-auto" />,
-              },
-              {
-                title: "Professional Driver",
-                desc: "Layanan supir profesional dan ramah untuk perjalanan Anda.",
-                icon: <FaUserTie className="text-blue-600 text-3xl mx-auto" />,
-              },
-              {
-                title: "Airport Pickup & Drop",
-                desc: "Layanan antar-jemput bandara dengan kenyamanan maksimal.",
-                icon: <FaPlaneArrival className="text-blue-600 text-3xl mx-auto" />,
-              },
-              {
-                title: "Online Booking",
-                desc: "Pemesanan mobil mudah secara online dari mana saja.",
-                icon: <FaCalendarCheck className="text-blue-600 text-3xl mx-auto" />,
-              },
-              {
-                title: "Tour Packages",
-                desc: "Nikmati paket wisata bersama keluarga atau rombongan.",
-                icon: <FaGlobeAsia className="text-blue-600 text-3xl mx-auto" />,
-              },
-              {
-                title: "Corporate Rental",
-                desc: "Solusi sewa mobil untuk kebutuhan perusahaan dan bisnis.",
-                icon: <FaBuilding className="text-blue-600 text-3xl mx-auto" />,
-              },
-            ].map((service, i) => (
-              <div key={i} className="text-center space-y-4">
+            {services.map((service, i) => (
+              <motion.div
+                key={i}
+                className="text-center space-y-4"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
+              >
                 <div className="w-16 h-16 mx-auto flex items-center justify-center bg-blue-100 rounded-full">
                   {service.icon}
                 </div>
                 <h4 className="text-lg font-semibold">{service.title}</h4>
                 <p className="text-gray-600 text-sm">{service.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -142,8 +218,17 @@ const HomePage = () => {
 
       {/* CTA Section */}
       <section className="w-full bg-blue-600 text-white py-20">
-        <div className="max-w-screen-2xl mx-auto px-6 text-center space-y-6">
-          <h3 className="text-3xl sm:text-4xl font-bold">Siap Menyewa Mobil Impian Anda?</h3>
+        <motion.div
+          className="max-w-screen-2xl mx-auto px-6 text-center space-y-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          custom={0}
+        >
+          <h3 className="text-3xl sm:text-4xl font-bold">
+            Siap Menyewa Mobil Impian Anda?
+          </h3>
           <p className="text-blue-100 text-sm sm:text-lg">
             Jelajahi pilihan mobil kami atau hubungi tim kami untuk informasi lebih lanjut
           </p>
@@ -159,7 +244,7 @@ const HomePage = () => {
               </button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );
