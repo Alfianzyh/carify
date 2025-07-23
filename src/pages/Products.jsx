@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import CarCard from '../components/CarCard';
 import SearchBar from '../components/SearchBar';
 
@@ -86,24 +87,79 @@ function Products() {
 
   return (
     <section className="p-8 max-w-6xl mx-auto">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">Mobil Siap Disewa</h2>
-        <p className="text-gray-600">
+      <motion.div
+        className="text-center mb-10"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          Mobil Siap Disewa
+        </motion.h2>
+        <motion.p
+          className="text-gray-600"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
           Temukan mobil pilihan yang sesuai dengan kebutuhan perjalanan Anda. Semua unit dalam kondisi terbaik dan siap jalan!
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="mb-6 max-w-md mx-auto">
-        <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Cari merek atau model..." />
-      </div>
+      <motion.div
+        className="mb-6 max-w-md mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <SearchBar
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Cari merek atau model..."
+        />
+      </motion.div>
 
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <motion.div
+        className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+      >
         {filteredCars.length > 0 ? (
-          filteredCars.map((car) => <CarCard key={car.id} car={car} />)
+          filteredCars.map((car) => (
+            <motion.div
+              key={car.id}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              <CarCard car={car} />
+            </motion.div>
+          ))
         ) : (
-          <p className="text-gray-500 col-span-full text-center">Mobil tidak ditemukan. Coba kata kunci lain.</p>
+          <motion.p
+            className="text-gray-500 col-span-full text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            Mobil tidak ditemukan. Coba kata kunci lain.
+          </motion.p>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }
