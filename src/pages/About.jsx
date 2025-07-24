@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function About() {
   const [form, setForm] = useState({
@@ -13,30 +14,49 @@ function About() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Di sini kamu bisa tambahkan integrasi email / notifikasi
     alert('Pesan berhasil dikirim. Kami akan segera menghubungi Anda!');
     setForm({ name: '', email: '', message: '' });
   };
 
   return (
     <section className="p-8 max-w-4xl mx-auto space-y-8">
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="text-3xl font-bold mb-4 text-blue-600 text-center">Tentang Kami</h2>
-
         <p className="mb-4 text-gray-700 leading-relaxed">
           <strong>Carify</strong> adalah platform digital yang memudahkan Anda dalam mencari dan menyewa mobil dengan aman, cepat, dan nyaman. Kami menyediakan berbagai pilihan mobil dari berbagai merek dan tipe, sesuai kebutuhan perjalanan Anda.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="bg-blue-100 p-6 rounded-lg space-y-4">
+      <motion.div
+        className="bg-blue-100 p-6 rounded-lg space-y-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
         <h3 className="text-xl font-semibold text-blue-800">Hubungi Kami</h3>
-        <p className="text-gray-700">Email: <a href="mailto:support@rentalmobil.id" className="text-blue-600 underline">info@carify.com</a></p>
-        <p className="text-gray-700">Telepon/WhatsApp: <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">+62 812-3456-7890</a></p>
-      </div>
+        <p className="text-gray-700">
+          Email: <a href="mailto:support@rentalmobil.id" className="text-blue-600 underline">info@carify.com</a>
+        </p>
+        <p className="text-gray-700">
+          Telepon/WhatsApp: <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">+62 812-3456-7890</a>
+        </p>
+      </motion.div>
 
-      <form onSubmit={handleSubmit} className="space-y-4 bg-white border rounded-lg p-6 shadow-md">
+      <motion.form
+        onSubmit={handleSubmit}
+        className="space-y-4 bg-white border rounded-lg p-6 shadow-md"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
         <h4 className="text-xl font-semibold text-gray-800">Kirim Pesan ke Kami</h4>
-        
+
         <div className="flex flex-col">
           <label htmlFor="name" className="text-sm font-medium text-gray-700">Nama</label>
           <input
@@ -82,7 +102,7 @@ function About() {
         >
           Kirim Pesan
         </button>
-      </form>
+      </motion.form>
     </section>
   );
 }
